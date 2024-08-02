@@ -5,7 +5,10 @@ import Image from 'next/image';
 
 export const CallToAction = () => {
   return (
-    <section className='bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip'>
+    <section
+      id='free'
+      className='bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip'
+    >
       <div className='container'>
         <div className='max-w-[540px] mx-auto relative'>
           <h2 className='section-title'>Sign up for free today</h2>

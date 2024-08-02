@@ -10,7 +10,7 @@ import apexLogo from '@/public/logo-apex.png';
 
 export const LogoTicket = () => {
   return (
-    <section className='py-8 md:py-12 bg-white'>
+    <section id='features' className='py-8 md:py-12 bg-white'>
       <div className='container'>
         <div className='flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]'>
           <motion.div
