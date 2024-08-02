@@ -2,32 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium tracking-tighter;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .btn {
+    @apply bg-black text-white px-4 py-2 inline-flex items-center justify-center rounded-lg font-medium tracking-tighter;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .btn-primary {
+    @apply bg-black text-white;
+  }
+  .btn-text {
+    @apply text-black bg-transparent;
+  }
+  .logo-ticket-image {
+    @apply h-8 w-auto;
+  }
+  .tag {
+    @apply text-sm border inline-flex border-[#222]/10 px-3 py-1 rounded-lg tracking-tight;
+  }
+  .section-title {
+    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text;
+  }
+  .section-description {
+    @apply text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E]  text-balance;
+  }
+  .card {
+    @apply max-w-xs w-full p-10 border border-[#F1F1F1] rounded-3xl shadow-md;
   }
 }
