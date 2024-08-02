@@ -1,3 +1,5 @@
+'use client';
+
 import avatar1 from '@/public/avatar-1.png';
 import avatar2 from '@/public/avatar-2.png';
 import avatar3 from '@/public/avatar-3.png';
@@ -8,6 +10,7 @@ import avatar7 from '@/public/avatar-7.png';
 import avatar8 from '@/public/avatar-8.png';
 import avatar9 from '@/public/avatar-9.png';
 import { TestimonialColumn } from '../component/TestimonialColumn';
+import React from 'react';
 
 const testimonials = [
   {
@@ -85,10 +88,18 @@ export const Testimonial = () => {
             nesciunt.
           </p>
         </div>
-        <div className='flex justify-center gap-6'>
-          <TestimonialColumn column={firstColumn} />
-          <TestimonialColumn column={secondColumn} className='hidden md:flex' />
-          <TestimonialColumn column={thirdColumn} className='hidden lg:flex' />
+        <div className='flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden'>
+          <TestimonialColumn column={firstColumn} duration={15} />
+          <TestimonialColumn
+            column={secondColumn}
+            className='hidden md:block'
+            duration={19}
+          />
+          <TestimonialColumn
+            column={thirdColumn}
+            className='hidden lg:block'
+            duration={17}
+          />
         </div>
       </div>
     </section>
