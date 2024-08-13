@@ -3,7 +3,6 @@ import React, { useState, MouseEvent } from 'react';
 import ArrowRight from '@/public/arrow-right.svg';
 import Image from 'next/image';
 import Logo from '@/public/logosaas.png';
-import MenuIcon from '@/public/menu.svg';
 import Link from 'next/link';
 import ScrollSpy from '../utils/ScrollSpy';
 
@@ -63,9 +62,24 @@ export const Header: React.FC = () => {
             </Link>
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
-              className='md:hidden z-50'
+              className='md:hidden z-50 relative w-6 h-6 mr-4 md:mr-0'
+              aria-label={navbarOpen ? 'Close menu' : 'Open menu'}
             >
-              <MenuIcon className='h-5 w-5' />
+              <span
+                className={`absolute h-0.5 w-6 bg-black transition duration-300 ease-in-out ${
+                  navbarOpen ? 'rotate-45' : '-translate-y-1.5'
+                }`}
+              ></span>
+              <span
+                className={`absolute h-0.5 w-6 bg-black transition-all duration-300 ease-in-out ${
+                  navbarOpen ? 'opacity-0' : ''
+                }`}
+              ></span>
+              <span
+                className={`absolute h-0.5 w-6 bg-black transition duration-300 ease-in-out ${
+                  navbarOpen ? '-rotate-45' : 'translate-y-1.5'
+                }`}
+              ></span>
             </button>
             <nav
               className={`${
